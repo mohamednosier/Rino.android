@@ -1,0 +1,4 @@
+include ':databinding-validation'
+include ':material_calender'
+include ':app'
+rootProject.name = "Rinho"

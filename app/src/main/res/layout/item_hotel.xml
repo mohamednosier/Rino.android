@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+        <import type="android.view.View"/>
+        <import type="java.util.concurrent.TimeUnit" />
+        <import type="androidx.lifecycle.LiveData" />
+
+        <import type="androidx.lifecycle.MutableLiveData" />
+        <variable
+            name="hotel"
+            type="com.rinho.payment.models.Accounts1" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/x4dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardCornerRadius="@dimen/radius_default">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+
+            <TextView
+                android:visibility="gone"
+                android:gravity="right"
+
+                android:id="@+id/tv_hotel_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/x10dp"
+                android:layout_marginTop="@dimen/x5dp"
+                android:text="@{hotel.date}"
+
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/txt_medium"
+                android:textStyle="bold"
+
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Hotel Name"
+                tools:ignore="MissingConstraints" />
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/x6dp"
+                android:layout_marginEnd="@dimen/x8dp"
+                android:layout_marginBottom="@dimen/x6dp"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <LinearLayout
+android:layout_gravity="right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/color_4f4f4f"
+                        android:textSize="@dimen/txt_medium"
+                        app:format="@{`yyyy-MM-dd HH:mm:ss`}"
+                        app:time="@{hotel.date}"
+                        tools:text="@{hotel.date}" />
+                    <TextView
+                        android:textColor="@color/color_147eb0"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/txt_medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="تاريخ الطلب  " />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_gravity="right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+
+
+
+                        android:id="@+id/last_month"
+                        android:gravity="right"
+                        android:textAlignment="gravity"
+                        android:layout_marginRight="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textColor="@color/color_4f4f4f"
+                        android:textSize="@dimen/txt_medium"
+                        tools:text=" دعم البلديات الفرعية في معالجة التشوه ( التلوث ) البصري بمدينة جدة"
+
+                        android:text="@{hotel.department}"
+                        tools:ignore="RtlCompat" />
+                    <TextView
+                        android:textColor="@color/color_147eb0"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/txt_medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="الجهة الطالبة"></TextView>
+                    <ImageView
+
+                        android:visibility="gone"
+                        android:id="@+id/star1"
+                        android:layout_marginLeft="20dp"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/star"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_gravity="right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <ImageView
+                        android:visibility="@{hotel.action.name==null ? View.GONE : View.VISIBLE}"
+                        android:id="@+id/star"
+                        android:layout_marginLeft="20dp"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/star"
+                        />
+                    <TextView
+
+                        android:layout_marginLeft="10dp"
+                        android:id="@+id/statues"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@{hotel.status}"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/color_4f4f4f"
+                        android:textSize="@dimen/txt_medium"
+
+                        tools:text="Saudi Transportation" />
+                    <TextView
+                        android:textColor="@color/color_147eb0"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/txt_medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="الحاله            "></TextView>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:visibility="gone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:textColor="@color/color_4f4f4f"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/txt_medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Req Dep     "
+                        ></TextView>
+                    <TextView
+                        android:id="@+id/tv_first_month"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@{hotel.department}"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/color_4f4f4f"
+                        android:textSize="@dimen/txt_small_plus"
+
+                        tools:text="Saudi Transportation" />
+                </LinearLayout>
+                <LinearLayout
+                    android:visibility="gone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:textColor="@color/color_4f4f4f"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/txt_medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Time           "></TextView>
+                    <TextView
+                        android:id="@+id/tv_last_month"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@{hotel.department}"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/color_4f4f4f"
+                        android:textSize="@dimen/txt_small_plus"
+
+                        tools:text="Saudi Transportation" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_price"
+                android:layout_width="34dp"
+                android:layout_height="27dp"
+                android:layout_marginEnd="72dp"
+                android:text="fdf"
+                android:textColor="@color/color_2e3540"
+                android:textSize="@dimen/txt_small_plus"
+                android:textStyle="bold"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteY="16dp"
+                tools:text="10$" />
+
+
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/x12dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_price"
+                tools:ignore="MissingConstraints" />
+
+
+
+
+
+
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>

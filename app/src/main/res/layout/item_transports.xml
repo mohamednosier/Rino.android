@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="transport"
+            type="com.rinho.payment.models.Budgets.BudgetsResponse" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/x6dp"
+        android:clickable="true"
+        android:elevation="@dimen/shadow_default"
+        android:focusable="true"
+        app:cardBackgroundColor="@color/color_f8f8ff8"
+        app:cardCornerRadius="@dimen/radius_default">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/container_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:paddingStart="@dimen/x22dp"
+            android:paddingTop="@dimen/x8dp"
+            android:paddingEnd="@dimen/x24dp"
+            android:paddingBottom="@dimen/x8dp">
+
+            <ImageView
+                android:id="@+id/img_arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_arrow_go"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/x6dp"
+                android:layout_marginEnd="@dimen/x8dp"
+                android:layout_marginBottom="@dimen/x6dp"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/img_arrow"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <TextView
+        android:id="@+id/currency"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@{transport.currency_format.iso_code}"
+        android:textAlignment="viewStart"
+        android:textColor="@color/color_4f4f4f"
+        android:textSize="@dimen/txt_small_plus"
+
+        android:textStyle="bold"
+        tools:text="Currency" />
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+android:text="  Budget"
+        android:textAlignment="viewStart"
+        android:textColor="@color/color_4f4f4f"
+        android:textSize="@dimen/txt_small_plus"
+        android:textStyle="bold"
+        tools:text="  Budget" />
+</LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Last             "
+                    ></TextView>
+                <TextView
+                    android:id="@+id/last_month"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@{transport.type}"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/color_4f4f4f"
+                    android:textSize="@dimen/txt_small_plus"
+
+                    tools:text="Saudi Transportation" />
+            </LinearLayout>
+                      <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="First Month  "
+                    ></TextView>
+                <TextView
+                    android:id="@+id/tv_first_month"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@{transport.first_month}"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/color_4f4f4f"
+                    android:textSize="@dimen/txt_small_plus"
+
+                    tools:text="Saudi Transportation" />
+                      </LinearLayout>
+                      <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Last Month  "></TextView>
+                <TextView
+                    android:id="@+id/tv_last_month"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@{transport.last_month}"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/color_4f4f4f"
+                    android:textSize="@dimen/txt_small_plus"
+
+                    tools:text="Saudi Transportation" />
+                      </LinearLayout>
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>

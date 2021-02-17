@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    app:startDestination="@id/searchPagerFragment">
+
+
+
+
+<!--    <fragment-->
+<!--        android:id="@+id/searchPagerFragment"-->
+<!--        android:name="com.gama.task.ui.pager.PagerFragment"-->
+<!--        tools:layout="@layout/fragment_search_pager">-->
+    <fragment
+        android:id="@+id/searchPagerFragment"
+        android:name="com.rinho.payment.ui.Accounts.Account_List.AccountListFragment"
+        tools:layout="@layout/fragment_hotels_search">
+
+
+        <action
+            android:id="@+id/getHotelsList"
+            app:destination="@id/hotelsListFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right">
+
+            <argument
+                android:name="req_no"
+                app:argType="string" />
+
+        </action>
+
+
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/hotelsListFragment"
+        android:name="com.rinho.payment.ui.Accounts.New_Account.NewAccountFragment"
+        tools:layout="@layout/fragment_hotels_list1">
+        <argument
+            android:name="req_no"
+            app:argType="string" />
+        <action
+            android:id="@+id/displayaccounts"
+            app:destination="@id/displaydetails"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right">
+
+
+
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/displaydetails"
+        android:name="com.rinho.payment.ui.DisolayAccounts.DisplayAccountsFragment"
+        tools:layout="@layout/fragment_display_accounts">
+
+
+    </fragment>
+
+</navigation>

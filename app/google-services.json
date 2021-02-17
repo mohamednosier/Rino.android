@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "253718545514",
+    "project_id": "rhino-albassami",
+    "storage_bucket": "rhino-albassami.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:253718545514:android:ef5413418c15c993103613",
+        "android_client_info": {
+          "package_name": "com.rinho.payment"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "253718545514-n2er2eqe3o9si3nhhsk798h9deue06lv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCo3qMlIWXfP7lGuv07JcCVNimqG24jCd4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "253718545514-n2er2eqe3o9si3nhhsk798h9deue06lv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

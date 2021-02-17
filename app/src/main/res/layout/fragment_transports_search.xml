@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="androidx.lifecycle.LiveData" />
+
+        <import type="java.util.concurrent.TimeUnit" />
+
+
+
+
+        <variable
+            name="isLoading"
+            type="Boolean" />
+
+
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#fff">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_hotels"
+
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/x4dp"
+            android:clipToPadding="false"
+            android:paddingStart="@dimen/x20dp"
+            android:paddingTop="@dimen/x4dp"
+            android:paddingEnd="@dimen/x20dp"
+            android:paddingBottom="@dimen/x10dp"
+
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+
+            tools:listitem="@layout/item_transports"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+
+
+
+
+
+
+
+
+        <include
+            android:id="@+id/loading_state"
+            layout="@layout/state_loading"
+            tools:visibility="gone"
+            app:isLoading="@{isLoading}" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
